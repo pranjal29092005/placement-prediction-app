@@ -20,7 +20,7 @@ if st.button("Predict Placement"):
     input_data = np.array([[cgpa, iq]])
 
     # Apply rule first
-    if iq > 90 or cgpa > 6:
+    if iq > 90 and cgpa > 6:
         # Model used only if rule is passed
         prediction = model.predict(input_data)
 
