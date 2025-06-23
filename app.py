@@ -29,7 +29,7 @@ if st.button("Predict Placement"):
         else:
             st.warning("❌ You might not be placed.")
     else:
-        st.error("❌ You are not eligible based on the rule.")
+        st.error("❌ You are not eligible.")
 
 
 
