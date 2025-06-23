@@ -20,7 +20,7 @@ if st.button("Predict Placement"):
     input_data = np.array([[cgpa, iq]])
 
     # Manual rule-based condition
-    if iq > 100 and cgpa > 6:
+    if iq > 110 and cgpa > 7:
         st.success("✅ You are likely to be placed! (Rule-Based)")
     else:
         # Use ML model if rule not satisfied
