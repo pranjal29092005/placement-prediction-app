@@ -25,11 +25,11 @@ if st.button("Predict Placement"):
         prediction = model.predict(input_data)
 
         if prediction[0] == 1:
-            st.success("✅ You are likely to be placed! (Model-Based)")
+            st.success("✅ You are likely to be placed!")
         else:
-            st.warning("❌ You might not be placed, even though you qualify the rule.")
+            st.warning("❌ You might not be placed.")
     else:
-        st.error("❌ You are not eligible based on the rule (CGPA > 7 and IQ > 110).")
+        st.error("❌ You are not eligible based on the rule.")
 
 
 
