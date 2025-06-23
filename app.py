@@ -18,19 +18,18 @@ iq = st.slider("Select your IQ", 70, 150, step=1)
 
 if st.button("Predict Placement"):
     input_data = np.array([[cgpa, iq]])
-    prediction = model.predict(input_data)
 
-    if prediction[0] == 1:
-        if cgpa > 7 and iq > 110:
-            st.success("✅ You are likely to be placed!")
+    # Apply rule first
+    if iq > 90 or cgpa > 6:
+        # Model used only if rule is passed
+        prediction = model.predict(input_data)
+
+        if prediction[0] == 1:
+            st.success("✅ You are likely to be placed! ")
         else:
-            st.success("✅ You may be placed!")
+            st.warning("❌ You might not be placed.")
     else:
-        if cgpa > 7 and iq > 110:
-            st.warning("❌ You may not be placed!")
-        else:
-            st.error("❌ You may not be placed.")
-
+        st.error("❌ You are not likely to be placed.")
 
 st.markdown("---")
 
